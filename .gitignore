@@ -1,5 +1,6 @@
 # Dir
-*/.idea
+*/.idea/
+*/out/
 
 # Files
 */*.xml

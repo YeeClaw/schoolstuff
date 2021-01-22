@@ -1,5 +1,7 @@
 package com.coltaj.miscwork.lab5;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Person {
 
     private String firstName, lastName;
@@ -26,6 +28,7 @@ public class Person {
         System.out.print(this);
     }
 
+    @Override
     public boolean equals(Object o) {
         if (!(o instanceof Person)) return false;
 
@@ -35,9 +38,9 @@ public class Person {
                 lastName.equals(other.getLastName());
     }
 
-    public Person copy(String firstName, String lastName) {
+    public void copy(@NotNull Person person) {
 
-        return new Person(firstName, lastName);
+        person.getCopy();
     }
 
     // Setters
@@ -57,6 +60,7 @@ public class Person {
         return this.lastName;
     }
 
+    @Override
     public String toString() {
 
         return "Person: " + firstName + ", " + lastName;
