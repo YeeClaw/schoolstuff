@@ -1,0 +1,6 @@
+# Dir
+*/.idea
+
+# Files
+*/*.xml
+*/*.iml
