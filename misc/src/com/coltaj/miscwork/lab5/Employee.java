@@ -8,6 +8,7 @@ public class Employee extends Person{
     public final int HOURS = 40;
     public final double OVERTIME = 1.5;
 
+    // Constructors
     public Employee() {
 
         super();
@@ -21,7 +22,24 @@ public class Employee extends Person{
         this.hoursWorked = hoursWorked;
     }
 
-    public String toString() {
-        return "The wages for " + super.getFirstName() + " from the " + department + " department are: $"; // ! Finish later
+    // Methods
+    public double calculateWage() {
+
+        double wage = 0;
+
+        if(hoursWorked <= HOURS) {
+            wage += hoursWorked * payRate;
+        } else if(hoursWorked > HOURS){
+            wage += (hoursWorked * payRate) * OVERTIME;
+        }
+
+        return wage;
     }
+
+    // Getters
+    public String toString() {
+        return "The wages for " + super.toString() + " from the " + department + " department are: $" + calculateWage();
+    }
+
+    // Setters
 }
